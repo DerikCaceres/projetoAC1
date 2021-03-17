@@ -1,28 +1,26 @@
 package com.example.service;
 
 
-import java.util.ArrayList;
+
+
 import java.util.List;
 
 import com.example.ac1.entities.cliente;
+import com.example.repositorio.clienterepositorio;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class servicecliente {
     
-    public List<cliente> getcliente()
-        {
-         cliente c1 = new cliente(); 
-        c1.setId(1l);
-        c1.setName("derik");
-        c1.setEmail("derik.maganhato@hotmail.com");
-        c1.setLugar("sorocaba");
-        c1.setDescricao("lindo");
+    @Autowired
+    private clienterepositorio repository;
 
-        List<cliente> list = new ArrayList<>();
-        list.add(c1);
+
+    public List<cliente> getcliente()
+    {
+        List<cliente> list = repository.getcliente();
         return list;
-        }
-    
+}
 }
