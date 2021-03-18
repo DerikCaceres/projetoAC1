@@ -1,6 +1,17 @@
 package com.example.ac1.entities;
 
-public class cliente {
+import java.io.Serializable;
+
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+@Entity
+@Table(name = "cliente_tabela")
+
+
+public class cliente implements Serializable {
+    
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String descricao;
