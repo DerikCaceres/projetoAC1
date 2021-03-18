@@ -3,7 +3,7 @@ package com.example.ac1.controller;
 import java.util.List;
 
 import com.example.Dto.Dtocliente;
-import com.example.ac1.entities.cliente;
+
 import com.example.service.servicecliente;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ public class clientecontroller
         @GetMapping("{id}")
         public ResponseEntity<Dtocliente>getclienteById(@PathVariable long id)
     {
-        Dtocliente dto = service.getclienteById(id);
+        Dtocliente dto = service.getclientebyId(id);
         return ResponseEntity.ok().body(dto);    
     
     }

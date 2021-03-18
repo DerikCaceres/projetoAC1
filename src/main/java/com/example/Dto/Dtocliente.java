@@ -1,30 +1,22 @@
 package com.example.Dto;
 
-import org.springframework.aop.aspectj.annotation.SingletonMetadataAwareAspectInstanceFactory;
+import com.example.ac1.entities.cliente;
 
 public class Dtocliente {
 
     private String name;
     private long id;
-
-    public Dtocliente()
-    {
-
+    
+    public Dtocliente(long nid, String nname) {
+        setName(nname);
+        setId(nid);
     }
-    public Dtocliente(String name, long id)
-    {
-        setName(name);
-        setId(id);
-    }
-
-    public Dtocliente(Cliente cliente)
-    {
+    
+    public Dtocliente(cliente cliente) {
         setName(cliente.getName());
         setId(cliente.getId());
     }
-    public Dtocliente(long nid, String nname) {
-    }
-    
+
     public String getName()
     {
         return name;
